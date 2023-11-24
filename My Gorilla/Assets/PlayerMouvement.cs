@@ -13,7 +13,8 @@ public class MovePlayer : MonoBehaviour
     public float jumpmove = 10f;
 
     public bool grounded = false;
-    
+    public int AutorizedShoot = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,18 +31,24 @@ public class MovePlayer : MonoBehaviour
 
     public void Move (InputAction.CallbackContext context)
     {
-        horizontalmove = context.ReadValue<Vector2>().x;
+        if (AutorizedShoot == 0)
+        {
+            horizontalmove = context.ReadValue<Vector2>().x;
+        }
     }
     
     public void Jump (InputAction.CallbackContext context) 
     {
-        if (grounded)
+        if (AutorizedShoot == 0)
         {
-            if (context.performed)
+            if (grounded)
             {
-                //Hold down jump button = full height
-                Player.velocity = new Vector2(Player.velocity.x, jumpmove);
+                if (context.performed)
+                {
+                    //Hold down jump button = full height
+                    Player.velocity = new Vector2(Player.velocity.x, jumpmove);
 
+                }
             }
         }
     }
