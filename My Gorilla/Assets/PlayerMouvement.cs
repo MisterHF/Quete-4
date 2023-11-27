@@ -26,7 +26,6 @@ public class MovePlayer : MonoBehaviour
     {
         Player.velocity = new Vector2(horizontalmove * movespeed * Time.deltaTime, Player.velocity.y);
 
-        
     }
 
     public void Move (InputAction.CallbackContext context)
@@ -60,5 +59,7 @@ public class MovePlayer : MonoBehaviour
     private void OnTriggerExit2D()
     {
         grounded = false;
+
+        print("ropvfjpz");
     }
 }

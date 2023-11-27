@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 339d031ca962ab9488c6ec1152b7d9b2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Dirt: {fileID: 7333052176230402238, guid: e17a3e2e5b7f7e4499d2a27f4cedbb8f, type: 3}
+  - Grass: {fileID: 2027953776735844830, guid: e3e2fa94ed8ad3c4abf975238ad62f18, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

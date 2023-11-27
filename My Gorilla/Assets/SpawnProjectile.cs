@@ -12,7 +12,7 @@ public class SpawnProjectile : MonoBehaviour
     public float Velx;
     public float Vely;
 
-    public float ProjectileDeathTime = 10f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +39,7 @@ public class SpawnProjectile : MonoBehaviour
 
     void Shoot()
     {
+
         Vector3 Pos = new Vector3 (PlayerPoint.position.x + 0.7f, PlayerPoint.position.y, 0f); 
         GameObject Proj = Instantiate(ProjectilePrefab, Pos, PlayerPoint.rotation);
         Proj.GetComponent<Rigidbody2D>().velocity = new Vector2(Velx, Vely);
