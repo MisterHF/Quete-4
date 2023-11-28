@@ -5,6 +5,16 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class MovePlayer : MonoBehaviour
 {
+    public enum STATE
+    {
+        WALKING,
+        MOD_AIM,
+        MOD_SHOOT,
+    }
+
+    public STATE state = STATE.WALKING;
+    public int side = 1;
+
     public Rigidbody2D Player;
 
     public float movespeed = 1f;
@@ -25,20 +35,20 @@ public class MovePlayer : MonoBehaviour
     void Update()
     {
         Player.velocity = new Vector2(horizontalmove * movespeed * Time.deltaTime, Player.velocity.y);
-
     }
 
     public void Move (InputAction.CallbackContext context)
     {
-        if (AutorizedShoot == 0)
+        if (state == STATE.WALKING)
         {
             horizontalmove = context.ReadValue<Vector2>().x;
+            if (horizontalmove != 0) side = (int)horizontalmove; 
         }
     }
     
     public void Jump (InputAction.CallbackContext context) 
     {
-        if (AutorizedShoot == 0)
+        if (state == STATE.WALKING)
         {
             if (grounded)
             {
@@ -52,7 +62,7 @@ public class MovePlayer : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D() 
+    private void OnTriggerStay2D() 
     {
         grounded = true;
     }
@@ -60,6 +70,5 @@ public class MovePlayer : MonoBehaviour
     {
         grounded = false;
 
-        print("ropvfjpz");
     }
 }
