@@ -17,7 +17,7 @@ public class MovePlayer : MonoBehaviour
 
     public Rigidbody2D Player;
 
-    public float movespeed = 1f;
+    public float movespeed = 2f;
     float horizontalmove;
 
     public float jumpmove = 10f;

@@ -23,9 +23,9 @@ public class SpawnProjectile : MonoBehaviour
 
     
     public float shootforce;
-    public float forcespeed = 1f;
+    public float forcespeed = 5f;
     public float Minshootforce = 1f;
-    public float Maxshootforce = 100f;
+    public float Maxshootforce = 2000f;
 
     // Start is called before the first frame update
     void Start()
