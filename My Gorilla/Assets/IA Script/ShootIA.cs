@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*
+
 [ExecuteInEditMode]
 public class ShootIA : MonoBehaviour
 {
     [Range(-10, 10)] public float WindForce;
      public float Gravity = 0.98665f;
 
-    
+    public GameObject SpeedGizmo;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -26,8 +26,6 @@ public class ShootIA : MonoBehaviour
             vel += (WindForce * Vector3.right + Gravity * Vector3.down) * Time.fixedDeltaTime;
             Vector3 pNext = pCur + vel * Time.fixedDeltaTime;
 
-         // vel += (WindForce * Vector3.right + 0 * Vector3.down) * Time.fixedDeltaTime;
-         // Vector3 pNext = pCur + vel * Time.fixedDeltaTime;
 
             Debug.DrawLine(pCur, pNext);
 
@@ -37,4 +35,3 @@ public class ShootIA : MonoBehaviour
 
     }
 }
-*/

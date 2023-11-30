@@ -16,8 +16,9 @@ public class MovePlayer : MonoBehaviour
     public int side = 1;
 
     public Rigidbody2D Player;
+    public SpriteRenderer spriteRenderer;
 
-    public float movespeed = 2f;
+    public float movespeed = 5f;
     float horizontalmove;
 
     public float jumpmove = 10f;
@@ -35,8 +36,13 @@ public class MovePlayer : MonoBehaviour
     void Update()
     {
         Player.velocity = new Vector2(horizontalmove * movespeed * Time.deltaTime, Player.velocity.y);
+        
     }
 
+    private void FixedUpdate()
+    {
+        FlipSprite(Player.velocity.x);
+    }
     public void Move (InputAction.CallbackContext context)
     {
         if (state == STATE.WALKING)
@@ -70,5 +76,17 @@ public class MovePlayer : MonoBehaviour
     {
         grounded = false;
 
+    }
+
+    void FlipSprite(float _velocity)
+    {
+        if (_velocity > 0.1f)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if (_velocity < -0.1f)
+        {
+            spriteRenderer.flipX = true;
+        }
     }
 }
